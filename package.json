@@ -1,0 +1,14 @@
+{
+    "name": "webpage-metrics",
+    "version": "1.0.0",
+    "author": "Cyril Vermande",
+    "license": "MIT",
+    "description": "Get webpage metrics",
+    "dependencies": {
+        "commander": "^4.0",
+        "puppeteer": "^2.0",
+        "ecoindex": "https://github.com/cyve/ecoindex/tarball/master"
+    },
+    "main": "./wpm.js",
+    "bin": "./wpm.js"
+}
