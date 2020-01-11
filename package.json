@@ -10,5 +10,7 @@
         "ecoindex": "https://github.com/cyve/ecoindex/tarball/master"
     },
     "main": "./wpm.js",
-    "bin": "./wpm.js"
+    "bin": {
+        "wpm": "bin/wpm"
+    }
 }
