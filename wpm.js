@@ -3,7 +3,7 @@
 const zlib = require('zlib');
 const input = require('commander');
 const puppeteer = require('puppeteer');
-const ecoindex = require('./node_modules/ecoindex/ecoindex');
+const ecoindex = require('./ecoindex.js');
 
 (async () => {
     input
