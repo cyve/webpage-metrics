@@ -103,5 +103,12 @@ const ecoindex = require('./ecoindex.js');
     for (var prop in metrics) {
         process.stdout.write(prop.padEnd(12, ' ') + metrics[prop] + "\n");
     }
-    process.exit(0);
+
+    var exit = function (signal) {
+        process.exit(0);
+    };
+    process.on('SIGINT', exit);
+    process.on('SIGQUIT', exit);
+    process.on('SIGTERM', exit);
+    exit();
 })();
