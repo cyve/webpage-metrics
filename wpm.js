@@ -92,11 +92,12 @@ const ecoindex = require('./ecoindex.js');
     }
 
     if (input.format === 'urlencoded') {
-        var parts = [];
+        var params = new URLSearchParams();
         for (var prop in metrics) {
-            parts.push(prop + '=' + metrics[prop]);
+            params.append(prop, metrics[prop]);
         }
-        process.stdout.write(parts.join('&'));
+
+        process.stdout.write(params.toString());
         process.exit(0);
     }
 
@@ -107,8 +108,10 @@ const ecoindex = require('./ecoindex.js');
     var exit = function (signal) {
         process.exit(0);
     };
+
     process.on('SIGINT', exit);
     process.on('SIGQUIT', exit);
     process.on('SIGTERM', exit);
+
     exit();
 })();
