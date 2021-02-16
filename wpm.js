@@ -73,7 +73,7 @@ const ecoindex = require('ecoindex');
     metrics.ecoindex = ecoindex.calculate(metrics.domElements, metrics.requests, Math.round(metrics.totalSize / 1024));
 
     // get performance metrics
-    var performance = await page.evaluate(() => window.performance.toJSON());
+    var performance = JSON.parse(await page.evaluate(() => JSON.stringify(window.performance)));
     metrics.serverTime = performance.timing.responseStart - performance.timing.fetchStart;
     metrics.renderTime = performance.timing.domComplete - performance.timing.domLoading;
     metrics.totalTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
